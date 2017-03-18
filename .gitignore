@@ -43,3 +43,6 @@ logs
 .pmd
 .classpath
 application.properties
+
+#mongo data files
+mongo

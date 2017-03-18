@@ -82,7 +82,13 @@ jenkins.pageSize=${JENKINS_PAGE_SIZE:-1000}
 EOF
 
 # find how many jenkins urls are configured
-max=$(wc -w <<< "${!JENKINS_MASTER*}")
+#max=$(wc -w <<< "${!JENKINS_MASTER*}")
+
+#===============================================================================
+#hardcode to 1, because the logic for multiple servers does not seem to be working
+#the collector iterates over the null server definitions and throws errors
+#===============================================================================
+max=1
 
 # loop over and output the url, username, apiKey and niceName
 i=0
